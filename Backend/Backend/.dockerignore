@@ -1,0 +1,8 @@
+﻿bin/
+obj/
+.vs/
+Storage/ModuleResources/
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Production.json
+*.user

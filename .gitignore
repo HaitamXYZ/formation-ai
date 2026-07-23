@@ -1,0 +1,13 @@
+Backend/Backend/Storage/ModuleResources/
+**/bin/
+**/obj/
+frontend/.next/
+frontend/node_modules/
+Backend/Backend/appsettings.Development.json
+Backend/Backend/appsettings.Local.json
+Backend/Backend/appsettings.Production.json
+frontend/.env*.local
+frontend/.env
+*.user
+.vs/
+**/.vs/
