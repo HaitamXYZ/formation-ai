@@ -69,7 +69,8 @@ public sealed class AnamAvatarSessionService : IAvatarSessionService
                     _options.AvatarId,
                     _options.AvatarModel,
                     _options.VoiceId,
-                    CustomClientLlmId),
+                    CustomClientLlmId,
+                    _options.LanguageCode),
                 $"formationai-conversation-{conversation.Id}"))
         };
         httpRequest.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _options.ApiKey);
@@ -156,7 +157,8 @@ public sealed class AnamAvatarSessionService : IAvatarSessionService
         [property: JsonPropertyName("avatarId")] string AvatarId,
         [property: JsonPropertyName("avatarModel")] string AvatarModel,
         [property: JsonPropertyName("voiceId")] string VoiceId,
-        [property: JsonPropertyName("llmId")] string LlmId);
+        [property: JsonPropertyName("llmId")] string LlmId,
+        [property: JsonPropertyName("languageCode")] string LanguageCode);
 
     private sealed record AnamSessionTokenResponse(
         [property: JsonPropertyName("sessionToken")] string? SessionToken);

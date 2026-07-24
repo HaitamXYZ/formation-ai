@@ -14,7 +14,10 @@ public sealed class AnamOptions
 
     public string PersonaName { get; init; } = "Formateur FormationAI";
 
+    public string LanguageCode { get; init; } = "fr-FR";
+
     public string SessionTokenEndpoint { get; init; } = "https://api.anam.ai/v1/auth/session-token";
 
     public int RequestTimeoutSeconds { get; init; } = 20;
 }
+
