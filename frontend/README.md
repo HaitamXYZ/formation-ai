@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# FormationAI
 
-## Getting Started
+FormationAI est une plateforme web de gestion de formations avec espaces administrateur et apprenant.
 
-First, run the development server:
+## Technologies
+
+- Frontend : Next.js, React, TypeScript, Tailwind CSS
+- Backend : ASP.NET Core 8, Entity Framework Core, ASP.NET Core Identity
+- Base de donnees : SQL Server
+- IA : Google Gemini et avatar vocal Anam.ai
+
+## Lancement local
+
+Frontend :
 
 ```bash
+cd frontend
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Backend :
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd Backend/Backend
+dotnet restore
+dotnet run
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configuration
 
-## Learn More
+Le frontend lit l'URL de l'API avec :
 
-To learn more about Next.js, take a look at the following resources:
+```text
+NEXT_PUBLIC_API_URL
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Le backend utilise notamment :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+ConnectionStrings__DefaultConnection
+Jwt__Key
+Cors__AllowedOrigins__0
+AI__Provider
+AI__ApiKey
+AI__Model
+Anam__ApiKey
+Anam__AvatarId
+Anam__AvatarModel
+Anam__VoiceId
+Anam__LanguageCode
+SeedAdmin__Email
+SeedAdmin__Password
+```
 
-## Deploy on Vercel
+## Deploiement
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Frontend : Vercel, root directory `frontend`
+- Backend : Railway, root directory `Backend/Backend`
+- Base SQL Server : service externe compatible SQL Server
